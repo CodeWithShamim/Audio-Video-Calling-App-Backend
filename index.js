@@ -6,6 +6,7 @@ require("dotenv").config();
 const videoRouter = require("./routes/video.route");
 
 app.use(express.json());
+app.use(express.urlencoded({ extented: true }));
 app.use(cors());
 
 app.get("/", (req, res) => {
