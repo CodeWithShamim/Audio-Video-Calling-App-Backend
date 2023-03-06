@@ -29,13 +29,15 @@ router.get("/generateToken", (req, res) => {
   );
   token.addGrant(videoGrant);
 
-  res.send(token.toJwt());
+  // console.log(token.toJwt());
+
+  res.json(token.toJwt());
 
   // messageing service
   /* client.messages
     .create({
       body: "test100 by shamim",
-      messagingServiceSid: "MGdaa82a5db023d65c1b96121ca830a949",
+      messagingServiceSid: process.env.MESSAGING_SERVICE_SID,
       to: "+8801762812568",
     })
     .then((message) => console.log(message.sid))
